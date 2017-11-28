@@ -8,7 +8,7 @@ RUN \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
-ADD *.conf /etc/collectd/conf-available/
+COPY *.conf /etc/collectd/conf-available/
 
 RUN \
   cat /etc/collectd/conf-available/read-redis.conf | tee -a /etc/collectd/collectd.conf && \
