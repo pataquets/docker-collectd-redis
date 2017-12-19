@@ -1,0 +1,10 @@
+collectd:
+  build: .
+  links:
+    - redis
+  volumes:
+    - ./write-csv-stdout.conf:/etc/collectd/conf.d/write-csv-stdout.conf:ro
+
+redis:
+  image: redis
+  #command: --loglevel verbose
